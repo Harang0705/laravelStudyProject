@@ -1,0 +1,55 @@
+.mainInner {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/*
+    메인메뉴 헤더 (resources\views\welcome.blade.php)
+*/
+.mainInner > .mainMenu {
+    width: 100%;
+    height: 80px;
+    background-color: #A0D9F7;
+}
+
+.mainInner > .mainMenu > ul {
+    width: 100%;
+    height: 100%;
+}
+
+.mainInner > .mainMenu > ul > .menu1, .menu2, .menu3{
+    width: 25%;
+    height: 100%;
+    float: left;
+    line-height: 80px;
+    text-align: center;
+}
+
+.mainInner > .mainMenu > ul > .menu1 > a {
+    font-size: 23px;
+}
+
+.mainInner > .mainMenu > ul > .menu2 > a {
+    font-size: 23px;
+}
+
+.mainInner > .mainMenu > ul > .menu3 > a {
+    font-size: 23px;
+}
+
+.mainInner > .mainMenu > ul > .memberMenu {
+    width: 25%;
+    height: 100%;
+    float: left;
+}
+
+.mainInner > .mainMenu > ul > .memberMenu > .memberLogin, .memberSingup {
+    width: 100%;
+    height: 50%;
+    line-height: 40px;
+}
+
+.mainInner > .mainMenu > ul > .memberMenu > .memberLogin > .login,
+.mainInner > .mainMenu > ul > .memberMenu > .memberSingup > .singUp {
+    font-size: 20px;
+}
