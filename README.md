@@ -66,8 +66,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 // 기초 코딩 컨벤션
 <pre>
 <code>
-<?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
