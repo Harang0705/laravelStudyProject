@@ -64,6 +64,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
 // 기초 코딩 컨벤션
+<pre>
+<code>
 <?php
 
 namespace App\Http\Controllers;
@@ -84,3 +86,6 @@ class boardController extends Controller
         
     }
 }
+</code>
+</pre>
+
