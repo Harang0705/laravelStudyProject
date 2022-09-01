@@ -13,7 +13,7 @@
         <div class="mainMenu">
             <ul>
                 <li class="menu1">
-                    <a>게시판<a>
+                    <a href="board">게시판<a>
                 </li>
                 <li class="menu2">
                     <a>메뉴2<a>
