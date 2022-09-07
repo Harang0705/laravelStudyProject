@@ -62,3 +62,28 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+// 기초 코딩 컨벤션
+<pre>
+<code>
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class boardController extends Controller
+{
+    /**
+     * 목적 : 이런걸 만들 생각이에요.
+     * 만든일시 : 2022-09-01 Thu 16:12:39
+     * 제작자 : 지건우
+     * 업데이트 일시 : 2022-09-01 Thu 16:15:05
+     * 업데이트 사유 : 그러게요 이게 어떤걸 추가로 고쳐볼까요?
+     */
+    public function index()
+    {
+        
+    }
+}
+</code>
+</pre>
+

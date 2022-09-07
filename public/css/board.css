@@ -1,0 +1,40 @@
+/*
+    board page inner value setting
+*/
+.testBoardMainInner {
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+}
+
+.testBoardMainInner > .testBoard {
+    width: 100%;
+    padding: 20px 0px 0px 0px;
+}
+
+/*
+    board head size value setting
+*/
+.testBoardHead > .testBoradHeadIdx {
+    width: 15%;
+}
+
+.testBoardHead > .testBoradHeadTitle {
+    width: 25%;
+}
+
+.testBoardHead > .testBoradHeadHit {
+    width: 35%;
+}
+
+.testBoardHead > .testBoradHeadEdit {
+    width: 25%;
+}
+
+/*
+    board Button design
+*/
+
+.testBoardCreate {
+    float: right;
+    font-size: 25px;
+}

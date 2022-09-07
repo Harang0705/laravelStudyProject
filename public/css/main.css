@@ -17,28 +17,20 @@
     height: 100%;
 }
 
-.mainInner > .mainMenu > ul > .menu1, .menu2, .menu3{
-    width: 25%;
+.mainInner > .mainMenu > ul > .main, .menu1, .menu2, .menu3{
+    width: 20%;
     height: 100%;
     float: left;
     line-height: 80px;
     text-align: center;
 }
 
-.mainInner > .mainMenu > ul > .menu1 > a {
-    font-size: 23px;
-}
-
-.mainInner > .mainMenu > ul > .menu2 > a {
-    font-size: 23px;
-}
-
-.mainInner > .mainMenu > ul > .menu3 > a {
+.mainInner > .mainMenu > ul > .main > a, .menu1 > a, .menu2 > a, .menu3 > a {
     font-size: 23px;
 }
 
 .mainInner > .mainMenu > ul > .memberMenu {
-    width: 25%;
+    width: 20%;
     height: 100%;
     float: left;
 }
@@ -52,4 +44,8 @@
 .mainInner > .mainMenu > ul > .memberMenu > .memberLogin > .login,
 .mainInner > .mainMenu > ul > .memberMenu > .memberSingup > .singUp {
     font-size: 20px;
+}
+
+.page {
+    margin: 0px auto;
 }
