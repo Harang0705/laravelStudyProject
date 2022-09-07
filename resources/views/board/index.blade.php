@@ -34,10 +34,19 @@
             </tr>
         </tbody>
     </table>
-    <button type="submit" href="{{ route('board.create') }}" class="testBoardCreate">등록</button>
+    <button type="submit" id="testBoardCreate">등록</button>
 </div>
 
 <script>
+    document.getElementById('testBoardCreate').addEventListener('click', function() {
+        axios({
+            method: "post",
+            url: "{{ route('board.create') }}",
+            date : {
 
+            }
+        });
+        // console.log('hello');
+    });
 </script>
 @include('template.footer')
