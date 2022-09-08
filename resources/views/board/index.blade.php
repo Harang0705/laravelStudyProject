@@ -39,12 +39,8 @@
 
 <script>
     document.getElementById('testBoardCreate').addEventListener('click', function() {
-        axios({
-            method: "post",
-            url: "{{ route('board.create') }}",
-            date : {
+        axios.get("{{ route('board.create') }}", function () {
 
-            }
         });
         // console.log('hello');
     });
