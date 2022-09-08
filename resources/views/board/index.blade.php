@@ -39,10 +39,7 @@
 
 <script>
     document.getElementById('testBoardCreate').addEventListener('click', function() {
-        axios.get("{{ route('board.create') }}", function () {
-
-        });
-        // console.log('hello');
+        location.href = "{{ route("board.create") }}";
     });
 </script>
 @include('template.footer')
