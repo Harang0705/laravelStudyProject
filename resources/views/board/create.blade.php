@@ -10,6 +10,20 @@
         <div class="testBoardCreateContentText">
             <p>내용</p>
         </div>
+        <div class="testBoardCreateContentInput">
+            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+    <div class="testBoardCreateButton">
+        <div class="testBoardCreateButtonInner">
+            <button type="submit" class="testBoardCreateButtonDesign" id="testBoardCreateButton">
+                <p>등록하기</p>
+            </button>
+        </div>
     </div>
 </div>
+
+<script>
+
+</script>
 @include('template.footer')
