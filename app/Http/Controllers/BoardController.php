@@ -40,11 +40,14 @@ class BoardController extends Controller
     }
 
     /**
-     * 목적 : 보드게시판 제작완료
+     * 목적 : 보드게시판 서버 업로드
      * 만든일시 : 2022-09-04 Sun 08:13:32
      * 제작자 : 지건우
      * 업데이트 일시 :
      * 업데이트 사유 :
      */
+    public function store(Request $request)
+    {
+    }
 
 }
