@@ -3,7 +3,7 @@
     <div class="testBoardCreateTitle">
         <ul class="testBoardCreateTitleArea">
             <li class="testBoardCreateTitleText"><p>제목</p></li>
-            <li class="testBoardCreateTitleInput"><input type="text" name="title" id="testBoardTitle" minlength="5" maxlength="30"></li>
+            <li class="testBoardCreateTitleInput"><input type="text" name="title" id="title" minlength="5" maxlength="30"></li>
         </ul>
     </div>
     <div class="testBoardCreateContent">
@@ -16,7 +16,7 @@
     </div>
     <div class="testBoardCreateButton">
         <div class="testBoardCreateButtonInner">
-            <button type="submit" class="testBoardCreateButtonDesign" id="testBoardCreateButton">
+            <button type="submit" class="testBoardCreateButtonDesign" id="testBoardCreate">
                 <p>등록하기</p>
             </button>
         </div>
@@ -24,6 +24,36 @@
 </div>
 
 <script>
+    document.getElementById('testBoardCreate').addEventListener('click', function() {
+        var title = document.getElementById('title').value; // 제목
+        var content = document.getElementById('content').value; // 해당글의 내용
+        var splitContent = content.split('\n'); 
+        var combineContent = '';
+        
+        // textarea에 개행문자가 포함될 경우
+        if (content.includes('\n') === true) {
+            var repeatNumber = splitContent.length;
 
+            for (var i = 0; i < repeatNumber; i++) {
+                if (splitContent[i] == '') {
+                    combineContent += "\n";
+                    continue;
+                }
+
+                combineContent += splitContent[i];
+            }
+        }
+
+        axios.post("{{ route('board.store') }}", {
+            title: title,
+            content: combineContent == '' ? content : combineContent
+        })
+        .then(function (__res) {
+            console.log(__res);
+        })
+        .catch(function (__err) { 
+            console.log(__err);
+        });
+    });
 </script>
 @include('template.footer')
