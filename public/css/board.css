@@ -130,13 +130,13 @@
 }
 
 .testBoardCreateButton > .testBoardCreateButtonInner {
-    width: 25%;
-    height: 30px;
     margin: auto;
+    width: 25%;
+    height: 80px;
 }
 
 .testBoardCreateButton > .testBoardCreateButtonInner > button {
-    width: 200px;
+    width: 100%;
     height: 50px;
-    margin: 15px 0px;
+    margin: 10px 0 0 0;
 }
