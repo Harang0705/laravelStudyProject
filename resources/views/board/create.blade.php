@@ -35,24 +35,22 @@
             var repeatNumber = splitContent.length;
 
             for (var i = 0; i < repeatNumber; i++) {
-                if (splitContent[i] == '') {
-                    combineContent += "\n";
-                    continue;
-                }
-
-                combineContent += splitContent[i];
+                combineContent += (splitContent[i] + "\n");
             }
         }
 
         axios.post("{{ route('board.store') }}", {
-            title: title,
-            content: combineContent == '' ? content : combineContent
+            title : title,
+            content : combineContent == '' ? content : combineContent
         })
         .then(function (__res) {
-            console.log(__res);
+            if (__res['data'] === true) {
+                alert('정상적으로 등록 되었습니다.');
+                location.href = "{{ route('board.index') }}";
+            }
         })
         .catch(function (__err) { 
-            console.log(__err);
+            alert(__err);
         });
     });
 </script>
