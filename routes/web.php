@@ -31,4 +31,6 @@ Route::prefix('board')->group(function () {
     Route::get('/', [boardController::class, 'index'])->name('board.index');
     Route::get('/create', [boardController::class, 'create'])->name('board.create');
     Route::post('/store', [boardController::class, 'store'])->name('board.store');
+    Route::get('/edit/{id}', [boardController::class, 'edit'])->name('board.edit');
+    Route::post('/update', [boardController::class, 'update'])->name('board.update');
 });
