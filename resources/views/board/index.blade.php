@@ -11,42 +11,17 @@
             <th class="testBoradHeadDelete">삭제</th>
         </thead>
         <tbody class="testBoardBody">
-            <tr>
-                <td class="testBoradBodyIdx">1</td>
-                <td class="testBoradBodyTitle">더미더미</td>
-                <td class="testBoradBodyHit">100000</td>
-                <td class="testBoardBodyCreatedAt">2022-09-10 12:20:20</td>
-                <td class="testBoardBodyUpdatedAt">2022-09-10 14:20:20</td>
-                <td class="testBoradBodyEdit">수정</td>
-                <td class="testBoradBodyDelete">삭제</td>
-            </tr>
-            <tr>
-                <td class="testBoradBodyIdx">2</td>
-                <td class="testBoradBodyTitle">더미더미</td>
-                <td class="testBoradBodyHit">100000</td>
-                <td class="testBoardBodyCreatedAt">2022-09-10 12:20:20</td>
-                <td class="testBoardBodyUpdatedAt">2022-09-10 14:20:20</td>
-                <td class="testBoradBodyEdit">수정</td>
-                <td class="testBoradBodyDelete">삭제</td>
-            </tr>
-            <tr>
-                <td class="testBoradBodyIdx">3</td>
-                <td class="testBoradBodyTitle">더미더미</td>
-                <td class="testBoradBodyHit">100000</td>
-                <td class="testBoardBodyCreatedAt">2022-09-10 12:20:20</td>
-                <td class="testBoardBodyUpdatedAt">2022-09-10 14:20:20</td>
-                <td class="testBoradBodyEdit">수정</td>
-                <td class="testBoradBodyDelete">삭제</td>
-            </tr>
-            <tr>
-                <td class="testBoradBodyIdx">4</td>
-                <td class="testBoradBodyTitle">더미더미</td>
-                <td class="testBoradBodyHit">100000</td>
-                <td class="testBoardBodyCreatedAt">2022-09-10 12:20:20</td>
-                <td class="testBoardBodyUpdatedAt">2022-09-10 14:20:20</td>
-                <td class="testBoradBodyEdit">수정</td>
-                <td class="testBoradBodyDelete">삭제</td>
-            </tr>
+            @foreach ($boardList as $board)
+                <tr>
+                    <td class="testBoradBodyIdx">{{ $board->id }}</td>
+                    <td class="testBoradBodyTitle">{{ $board->title }}</td>
+                    <td class="testBoradBodyHit">{{ $board->hit }}</td>
+                    <td class="testBoardBodyCreatedAt">{{ $board->created_at }}</td>
+                    <td class="testBoardBodyUpdatedAt">{{ $board->updated_at == $board->created_at ? '-' : $board->updated_at }}</td>
+                    <td class="testBoradBodyEdit"><a href="{{ route('board.edit', $board->id) }}">수정</a></td>
+                    <td class="testBoradBodyDelete">삭제</td>
+                </tr>     
+            @endforeach
         </tbody>
     </table>
     <button type="submit" id="testBoardCreate">등록</button>
