@@ -12,10 +12,10 @@ class BoardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('board\index', [
-            'boardList' => Board::all()
+            'boardList' => Board::paginate(5, ['*'], 'page', $request->page)
         ]);
     }
 
