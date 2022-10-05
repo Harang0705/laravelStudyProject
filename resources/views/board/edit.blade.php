@@ -3,7 +3,7 @@
     <div class="testBoardCreateTitle">
         <ul class="testBoardCreateTitleArea">
             <li class="testBoardCreateTitleText"><p>제목</p></li>
-            <li class="testBoardCreateTitleInput"><input type="text" name="title" id="title" minlength="5" maxlength="30"></li>
+            <li class="testBoardCreateTitleInput"><input type="text" name="title" id="title" minlength="5" maxlength="30" value="{{ $board->title }}"></li>
         </ul>
     </div>
     <div class="testBoardCreateContent">
@@ -11,13 +11,13 @@
             <p>내용</p>
         </div>
         <div class="testBoardCreateContentInput">
-            <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <textarea name="content" id="content" cols="30" rows="10">{!! $board->content !!}</textarea>
         </div>
     </div>
     <div class="testBoardCreateButton">
         <div class="testBoardCreateButtonInner">
             <button type="submit" class="testBoardCreateButtonDesign" id="testBoardCreate">
-                <p>등록하기</p>
+                <p>수정하기</p>
             </button>
         </div>
     </div>
@@ -39,13 +39,14 @@
             }
         }
 
-        axios.post("{{ route('board.store') }}", {
+        axios.post("{{ route('board.update') }}", {
+            id : "{{ $board->id }}",
             title : title,
             content : combineContent == '' ? content : combineContent
         })
         .then(function (__res) {
             if (__res['data'] === true) {
-                alert('정상적으로 등록 되었습니다.');
+                alert('정상적으로 수정 되었습니다.');
                 location.href = "{{ route('board.index') }}";
             }
         })

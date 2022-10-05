@@ -2,49 +2,77 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Controller;
+use App\Models\board\Board;
 use Illuminate\Http\Request;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 
 class BoardController extends Controller
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
     /**
-     * 목적 : 보드게시판 메인화면 이동
-     * 만든일시 : 2022-09-01 Thu 16:12:39
-     * 제작자 : 지건우
-     * 업데이트 일시 : 2022-09-01 Thu 16:15:05
-     * 업데이트 사유 : 그러게요 이게 어떤걸 추가로 고쳐볼까요?
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('board\index');
+        return view('board\index', [
+            'boardList' => Board::paginate(5, ['*'], 'page', $request->page)
+        ]);
     }
 
     /**
-     * 목적 : 보드게시판 제작화면 이동
-     * 만든일시 : 2022-09-04 Sun 08:13:18
-     * 제작자 : 지건우
-     * 업데이트 일시 :
-     * 업데이트 사유 :
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
         return view('board\create');
     }
 
     /**
-     * 목적 : 보드게시판 제작완료
-     * 만든일시 : 2022-09-04 Sun 08:13:32
-     * 제작자 : 지건우
-     * 업데이트 일시 :
-     * 업데이트 사유 :
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
      */
+    public function store(Request $request)
+    {
+        return Board::boardUpload($request->all());
+    }
+    
+    /** 
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\boardModel  $boardModel
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Request $request)
+    {
+        return view('board/edit' , [
+            'board' => Board::find($request->id)
+        ]);
+    }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\boardModel  $boardModel
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+        return Board::boardUpdate($request->all());
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\boardModel  $boardModel
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Request $request)
+    {
+        //
+    }
 }
